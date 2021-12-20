@@ -7,14 +7,17 @@ const MongoClient = mongodb.MongoClient
 
 const port = process.env.PORT || 8000
 
+// console.log(process.env.RESTREVIEWS_DB_URI)
+
 MongoClient.connect
     (
-        process.env.RESTREVIEWS_DB_URI,
-        {
-            poolSize: 50,
-            qtimeout: 2500,
-            useNewUrlParse: true
-        }
+        process.env.RESTREVIEWS_DB_URI
+        // ,{
+        //    maxPoolSize: 50,
+        //     //waitQueueTimeoutMS: 2500,
+        //     // qtimeout: 2500,
+        //    // useNewUrlParse: true
+        // }
     )
     .catch(
         err=>{
